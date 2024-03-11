@@ -1,0 +1,31 @@
+<main class="w-full h-full bg-image">
+    <div
+        class="absolute w-2/5 h-2/4 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-20 shadow-xl shadow-purple-950 bg-slate-50 rounded-xl">
+        <form autocomplete="off" (ngSubmit)="login()" [formGroup]="miFormulario" class="grid grid-cols-1">
+            <span class="text-xl text-center uppercase font-bold">Login</span>
+            <mat-divider></mat-divider>
+
+            <span class="mt-4">User</span>
+            <input type="text" formControlName="user" placeholder="Ingrese su usuario"
+                class="border-gray-800 border-b-2">
+            <span class="mt-4">Password</span>
+            <input type="password" formControlName="password" placeholder="Ingrese su contraseña"
+                class="border-gray-800 border-b-2">
+
+            <div class="mt-6 flex justify-center">
+                <button mat-raised-button color="primary" type="submit" [disabled]="miFormulario.invalid">
+                    Login
+                </button>
+            </div>
+
+            <div class="absolute bottom-2">
+                <span class="text-xs">
+                    ¿No tienes cuenta?
+                </span>
+                <a routerLink="/auth/registro" class="text-xs">
+                    Crear una aquí
+                </a>
+            </div>
+        </form>
+    </div>
+</main>
